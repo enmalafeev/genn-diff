@@ -8,4 +8,4 @@ Utiluty for searching diff in config files
 $ make install
 ```
 ## Install and run
-https://asciinema.org/a/UO3MH7CMlSCSpRMz0r1yeHPdQ
+[![asciicast](https://asciinema.org/a/240994.svg)](https://asciinema.org/a/240994)
