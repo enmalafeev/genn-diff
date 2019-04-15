@@ -1,6 +1,6 @@
 {
-  "name": "gen-diff",
-  "version": "1.0.0",
+  "name": "gen-diff-150419",
+  "version": "1.0.1",
   "description": "Utiluty for searching diff in config files",
   "bin": {
     "gendiff": "dist/bin/gendiff.js"
