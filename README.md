@@ -7,3 +7,5 @@ Utiluty for searching diff in config files
 ```sh
 $ make install
 ```
+## Install and run
+https://asciinema.org/a/UO3MH7CMlSCSpRMz0r1yeHPdQ
