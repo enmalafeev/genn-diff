@@ -7,5 +7,11 @@ start:
 publish:
 	npm publish
 
+test: 
+	npm run test
+
+watch:
+	npm run watch
+	
 lint:
 	npx eslint .

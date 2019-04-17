@@ -11,7 +11,8 @@
   "scripts": {
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "watch": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,9 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/enmalafeev/project-lvl2-s463/issues"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "homepage": "https://github.com/enmalafeev/project-lvl2-s463#readme",
   "devDependencies": {
