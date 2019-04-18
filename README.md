@@ -13,3 +13,6 @@ $ make install
 ```
 ## Install and run
 [![asciicast](https://asciinema.org/a/240994.svg)](https://asciinema.org/a/240994)
+
+## Runing - get difference
+[![asciicast](https://asciinema.org/a/241657.svg)](https://asciinema.org/a/241657)
