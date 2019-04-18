@@ -1,9 +1,11 @@
 import fs from 'fs';
+import path from 'path';
 import genDiff from '../src';
 
-const file1 = fs.readFileSync('__tests__/__fixtures__/before.json', 'utf8');
-const file2 = fs.readFileSync('__tests__/__fixtures__/after.json', 'utf8');
-const result = fs.readFileSync('__tests__/__fixtures__/result.txt', 'utf8').trim();
+const file1 = path.resolve(__dirname, '__fixtures__/before.json');
+const file2 = path.resolve(__dirname, '__fixtures__/after.json');
+const resultPath = path.resolve(__dirname, '__fixtures__/result.txt');
+const result = fs.readFileSync(resultPath, 'utf8');
 
 test('genDiff', () => {
   expect(genDiff(file1, file2)).toEqual(result);
