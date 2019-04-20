@@ -19,3 +19,6 @@ $ make install
 
 ## Runing - get difference YAML
 [![asciicast](https://asciinema.org/a/241926.svg)](https://asciinema.org/a/241926)
+
+## Runing - get difference INI
+[![asciicast](https://asciinema.org/a/241928.svg)](https://asciinema.org/a/241928)
