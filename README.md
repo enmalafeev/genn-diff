@@ -12,7 +12,10 @@ Utiluty for searching diff in config files
 $ make install
 ```
 ## Install and run
-[![asciicast](https://asciinema.org/a/240994.svg)](https://asciinema.org/a/240994)
+[![asciicast](https://asciinema.org/a/241927.svg)](https://asciinema.org/a/241927)
 
-## Runing - get difference
+## Runing - get difference JSON
 [![asciicast](https://asciinema.org/a/241657.svg)](https://asciinema.org/a/241657)
+
+## Runing - get difference YAML
+[![asciicast](https://asciinema.org/a/241926.svg)](https://asciinema.org/a/241926)
