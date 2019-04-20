@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import fs from 'fs';
 import path from 'path';
-import yaml from 'js-yaml';
 import parsers from './parsers';
 
 export default (pathToFile1, pathToFile2) => {
