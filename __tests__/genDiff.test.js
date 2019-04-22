@@ -30,9 +30,9 @@ test.each(testedFiles)(
   },
 );
 
-test.each([[pathToTreeFile1, pathToTreeFile2]])(
-  'genDiff-tree',
-  (beforePath, afterPath) => {
-    expect(genDiff(beforePath, afterPath)).toEqual(resultTree);
-  },
-);
+// test.each([[pathToTreeFile1, pathToTreeFile2]])(
+//   'genDiff-tree',
+//   (beforePath, afterPath) => {
+//     expect(genDiff(beforePath, afterPath)).toEqual(resultTree);
+//   },
+// );
