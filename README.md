@@ -22,3 +22,6 @@ $ make install
 
 ## Runing - get difference INI
 [![asciicast](https://asciinema.org/a/241928.svg)](https://asciinema.org/a/241928)
+
+## Runing - get difference in trees
+[![asciicast](https://asciinema.org/a/242523.svg)](https://asciinema.org/a/242523)
