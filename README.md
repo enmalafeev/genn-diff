@@ -4,6 +4,8 @@
 
 [![Build Status](https://travis-ci.com/enmalafeev/project-lvl2-s463.svg?branch=master)](https://travis-ci.com/enmalafeev/project-lvl2-s463)
 
+[![Test Coverage](https://api.codeclimate.com/v1/badges/ca66f1e815523163275b/test_coverage)](https://codeclimate.com/github/enmalafeev/project-lvl2-s463/test_coverage)
+
 Utiluty for searching diff in config files
 
 ## Setup
