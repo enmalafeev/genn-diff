@@ -14,14 +14,14 @@ const pathToTreeFile2 = path.resolve(__dirname, '__fixtures__/after-tree.json');
 
 const resultPath = path.resolve(__dirname, '__fixtures__/result.txt');
 const resultPathTree = path.resolve(__dirname, '__fixtures__/result-tree.txt');
-const result = fs.readFileSync(resultPath, 'utf8').trim();
-const resultTree = fs.readFileSync(resultPathTree, 'utf8').trim();
+const result = fs.readFileSync(resultPath, 'utf8');
+const resultTree = fs.readFileSync(resultPathTree, 'utf8');
 
 const resultPathPlain = path.resolve(__dirname, '__fixtures__/resultPlain.txt');
-const resultPlain = fs.readFileSync(resultPathPlain, 'utf8').trim();
+const resultPlain = fs.readFileSync(resultPathPlain, 'utf8');
 
 const resultPathJSON = path.resolve(__dirname, '__fixtures__/resultJSON.txt');
-const resultJSON = fs.readFileSync(resultPathJSON, 'utf8').trim();
+const resultJSON = fs.readFileSync(resultPathJSON, 'utf8');
 
 const testedFiles = [
   [pathToJsonFile1, pathToJsonFile2],
