@@ -27,3 +27,6 @@ $ make install
 
 ## Runing - get difference in trees
 [![asciicast](https://asciinema.org/a/242523.svg)](https://asciinema.org/a/242523)
+
+## Runing - get difference in plain format
+[![asciicast](https://asciinema.org/a/242949.svg)](https://asciinema.org/a/242949)
