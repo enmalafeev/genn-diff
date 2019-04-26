@@ -30,3 +30,6 @@ $ make install
 
 ## Runing - get difference in plain format
 [![asciicast](https://asciinema.org/a/242949.svg)](https://asciinema.org/a/242949)
+
+## Runing - get difference in JSON format
+[![asciicast](https://asciinema.org/a/242987.svg)](https://asciinema.org/a/242987)
