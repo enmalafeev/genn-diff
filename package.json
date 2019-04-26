@@ -11,9 +11,8 @@
   "scripts": {
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build",
-    "test": "jest",
-    "watch": "jest --watch",
-    "test-coverage": "jest --coverage"
+    "test": "jest --coverage",
+    "watch": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -28,7 +27,8 @@
     "url": "https://github.com/enmalafeev/project-lvl2-s463/issues"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "collectCoverage": true
   },
   "homepage": "https://github.com/enmalafeev/project-lvl2-s463#readme",
   "devDependencies": {
