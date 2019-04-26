@@ -3,9 +3,9 @@ import _ from 'lodash';
 const countSpaces = depth => ' '.repeat(2 * depth);
 
 const getString = (obj, depth) => {
+  if (!_.isObject(obj)) return obj;
   const openBraces = countSpaces(depth + 1);
   const closingBraces = countSpaces(depth);
-  if (!_.isObject(obj)) return obj;
   return `{\n${_.keys(obj).map(key => `${openBraces}${key}: ${obj[key]}`)}\n${closingBraces}}`;
 };
 
