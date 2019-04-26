@@ -1,9 +1,11 @@
-import mainRender from './main';
-import plainRender from './plain';
+import tree from './tree';
+import plain from './plain';
+import json from './json';
 
 const render = {
-  mainRender,
-  plainRender,
+  tree,
+  plain,
+  json,
 };
 
 export default format => render[format];

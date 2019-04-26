@@ -20,6 +20,9 @@ const resultTree = fs.readFileSync(resultPathTree, 'utf8').trim();
 const resultPathPlain = path.resolve(__dirname, '__fixtures__/resultPlain.txt');
 const resultPlain = fs.readFileSync(resultPathPlain, 'utf8').trim();
 
+const resultPathJSON = path.resolve(__dirname, '__fixtures__/resultJSON.txt');
+const resultJSON = fs.readFileSync(resultPathJSON, 'utf8').trim();
+
 const testedFiles = [
   [pathToJsonFile1, pathToJsonFile2],
   [pathToYmlFile1, pathToYmlFile2],
@@ -29,20 +32,27 @@ const testedFiles = [
 test.each(testedFiles)(
   'genDiff-%#',
   (beforePath, afterPath) => {
-    expect(genDiff(beforePath, afterPath, 'mainRender')).toEqual(result);
+    expect(genDiff(beforePath, afterPath, 'tree')).toEqual(result);
   },
 );
 
 test.each([[pathToTreeFile1, pathToTreeFile2]])(
   'genDiff-tree',
   (beforePath, afterPath) => {
-    expect(genDiff(beforePath, afterPath, 'mainRender')).toEqual(resultTree);
+    expect(genDiff(beforePath, afterPath, 'tree')).toEqual(resultTree);
   },
 );
 
 test.each([[pathToTreeFile1, pathToTreeFile2]])(
   'genDiff-plain',
   (beforePath, afterPath) => {
-    expect(genDiff(beforePath, afterPath, 'plainRender')).toEqual(resultPlain);
+    expect(genDiff(beforePath, afterPath, 'plain')).toEqual(resultPlain);
+  },
+);
+
+test.each([[pathToTreeFile1, pathToTreeFile2]])(
+  'genDiff-JSON',
+  (beforePath, afterPath) => {
+    expect(genDiff(beforePath, afterPath, 'json')).toEqual(resultJSON);
   },
 );

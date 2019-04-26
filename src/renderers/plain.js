@@ -6,7 +6,7 @@ const getString = (value) => {
   return `${value}`;
 };
 
-const plainRender = (ast) => {
+const plain = (ast) => {
   const diff = (data, parent = []) => data.map((node) => {
     const {
       key, type, value, valueBefore, valueAfter, children,
@@ -29,4 +29,4 @@ const plainRender = (ast) => {
   return _.flatten(diff(ast)).filter(_.identity).join('\n');
 };
 
-export default plainRender;
+export default plain;

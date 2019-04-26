@@ -2,7 +2,7 @@ import _ from 'lodash';
 import parse from './parsers';
 import getRender from './renderers';
 
-export default (pathToFile1, pathToFile2, format = 'mainRender') => {
+export default (pathToFile1, pathToFile2, format = 'tree') => {
   const obj1 = parse(pathToFile1);
   const obj2 = parse(pathToFile2);
   const render = getRender(format);
