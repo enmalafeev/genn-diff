@@ -17,6 +17,9 @@ const resultPathTree = path.resolve(__dirname, '__fixtures__/result-tree.txt');
 const result = fs.readFileSync(resultPath, 'utf8').trim();
 const resultTree = fs.readFileSync(resultPathTree, 'utf8').trim();
 
+const resultPathPlain = path.resolve(__dirname, '__fixtures__/resultPlain.txt');
+const resultPlain = fs.readFileSync(resultPathPlain, 'utf8').trim();
+
 const testedFiles = [
   [pathToJsonFile1, pathToJsonFile2],
   [pathToYmlFile1, pathToYmlFile2],
@@ -34,5 +37,12 @@ test.each([[pathToTreeFile1, pathToTreeFile2]])(
   'genDiff-tree',
   (beforePath, afterPath) => {
     expect(genDiff(beforePath, afterPath)).toEqual(resultTree);
+  },
+);
+
+test.each([[pathToTreeFile1, pathToTreeFile2]])(
+  'genDiff-plain',
+  (beforePath, afterPath) => {
+    expect(genDiff(beforePath, afterPath)).toEqual(resultPlain);
   },
 );

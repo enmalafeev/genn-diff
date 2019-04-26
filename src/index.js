@@ -1,10 +1,11 @@
 import _ from 'lodash';
 import parse from './parsers';
-import render from './renderers/render-json';
+import getRender from './renderers';
 
-export default (pathToFile1, pathToFile2) => {
+export default (pathToFile1, pathToFile2, format = 'mainRender') => {
   const obj1 = parse(pathToFile1);
   const obj2 = parse(pathToFile2);
+  const render = getRender(format);
 
   const buildAst = (obj1, obj2) => {
     const uniqKeys = _.union(_.keys(obj1), _.keys(obj2));
@@ -52,5 +53,4 @@ export default (pathToFile1, pathToFile2) => {
   };
   const ast = buildAst(obj1, obj2);
   return render(ast);
-  // return ast;
 };
