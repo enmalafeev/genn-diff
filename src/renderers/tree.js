@@ -10,12 +10,12 @@ const getString = (obj, depth) => {
 };
 
 const tree = (ast) => {
-  const diff = (data, depth = 1) => data.map((node) => {
+  const getDiff = (data, depth = 1) => data.map((node) => {
     const spaces = countSpaces(depth);
     const resultValue = getString(node.value, depth);
     switch (node.type) {
       case 'parent':
-        return `${spaces}${node.key}: {\n${_.flatten(diff(node.children, depth + 1)).join('\n')}\n${spaces}}`;
+        return `${spaces}${node.key}: {\n${_.flatten(getDiff(node.children, depth + 1)).join('\n')}\n${spaces}}`;
       case 'added':
         return `${spaces}+ ${node.key}: ${resultValue}`;
       case 'changed':
@@ -28,7 +28,7 @@ const tree = (ast) => {
         throw new Error('unknown node type.');
     }
   });
-  return `{\n${(_.flatten(diff(ast))).join('\n')}\n}`;
+  return `{\n${(_.flatten(getDiff(ast))).join('\n')}\n}`;
 };
 
 

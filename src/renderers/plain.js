@@ -7,13 +7,13 @@ const getString = (value) => {
 };
 
 const plain = (ast) => {
-  const diff = (data, parent = []) => data.map((node) => {
+  const getDiff = (data, parent = []) => data.map((node) => {
     const {
       key, type, value, valueBefore, valueAfter, children,
     } = node;
     switch (type) {
       case 'parent':
-        return diff(children, [...parent, key]).filter(_.identity);
+        return getDiff(children, [...parent, key]).filter(_.identity);
       case 'added':
         return `Property '${[...parent, key].join('.')}' was added with value: ${getString(value)}`;
       case 'changed':
@@ -26,7 +26,7 @@ const plain = (ast) => {
         throw new Error('unknown node type.');
     }
   });
-  return _.flatten(diff(ast)).filter(_.identity).join('\n');
+  return _.flattenDeep(getDiff(ast)).join('\n');
 };
 
 export default plain;
