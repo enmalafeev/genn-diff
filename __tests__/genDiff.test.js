@@ -29,20 +29,20 @@ const testedFiles = [
 test.each(testedFiles)(
   'genDiff-%#',
   (beforePath, afterPath) => {
-    expect(genDiff(beforePath, afterPath)).toEqual(result);
+    expect(genDiff(beforePath, afterPath, 'mainRender')).toEqual(result);
   },
 );
 
 test.each([[pathToTreeFile1, pathToTreeFile2]])(
   'genDiff-tree',
   (beforePath, afterPath) => {
-    expect(genDiff(beforePath, afterPath)).toEqual(resultTree);
+    expect(genDiff(beforePath, afterPath, 'mainRender')).toEqual(resultTree);
   },
 );
 
 test.each([[pathToTreeFile1, pathToTreeFile2]])(
   'genDiff-plain',
   (beforePath, afterPath) => {
-    expect(genDiff(beforePath, afterPath)).toEqual(resultPlain);
+    expect(genDiff(beforePath, afterPath, 'plainRender')).toEqual(resultPlain);
   },
 );

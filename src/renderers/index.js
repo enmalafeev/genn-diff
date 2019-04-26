@@ -1,4 +1,4 @@
-import mainRender from './render-json';
+import mainRender from './main';
 import plainRender from './plain';
 
 const render = {
