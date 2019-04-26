@@ -10,5 +10,5 @@ programm
   .description('Compares two configuration files and shows a difference.')
   .option('-f, --format [type]', 'Output format')
   .arguments('<firstConfig> <secondConfig>')
-  .action((file1, file2, { format }) => console.log(genDiff(file1, file2, format)))
+  .action((filepath1, filepath2, { format }) => console.log(genDiff(filepath1, filepath2, format)))
   .parse(process.argv);
