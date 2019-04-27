@@ -15,7 +15,7 @@ const tree = (ast) => {
     const resultValue = getString(node.value, depth);
     switch (node.type) {
       case 'parent':
-        return `${spaces}${node.key}: {\n${_.flatten(getDiff(node.children, depth + 1)).join('\n')}\n${spaces}}`;
+        return `${spaces}${node.key}: {\n${_.flattenDeep(getDiff(node.children, depth + 1)).join('\n')}\n${spaces}}`;
       case 'added':
         return `${spaces}+ ${node.key}: ${resultValue}`;
       case 'changed':
@@ -28,7 +28,7 @@ const tree = (ast) => {
         throw new Error('unknown node type.');
     }
   });
-  return `{\n${(_.flatten(getDiff(ast))).join('\n')}\n}`;
+  return `{\n${(_.flattenDeep(getDiff(ast))).join('\n')}\n}`;
 };
 
 

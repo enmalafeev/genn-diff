@@ -2,57 +2,23 @@ import fs from 'fs';
 import path from 'path';
 import genDiff from '../src';
 
-const pathToJsonFile1 = path.resolve(__dirname, '__fixtures__/before.json');
-const pathToJsonFile2 = path.resolve(__dirname, '__fixtures__/after.json');
-const pathToYmlFile1 = path.resolve(__dirname, '__fixtures__/before.yml');
-const pathToYmlFile2 = path.resolve(__dirname, '__fixtures__/after.yml');
-const pathToIniFile1 = path.resolve(__dirname, '__fixtures__/before.ini');
-const pathToIniFile2 = path.resolve(__dirname, '__fixtures__/after.ini');
-
-const pathToTreeFile1 = path.resolve(__dirname, '__fixtures__/before-tree.json');
-const pathToTreeFile2 = path.resolve(__dirname, '__fixtures__/after-tree.json');
-
-const resultPath = path.resolve(__dirname, '__fixtures__/result.txt');
-const resultPathTree = path.resolve(__dirname, '__fixtures__/result-tree.txt');
-const result = fs.readFileSync(resultPath, 'utf8');
-const resultTree = fs.readFileSync(resultPathTree, 'utf8');
-
-const resultPathPlain = path.resolve(__dirname, '__fixtures__/resultPlain.txt');
-const resultPlain = fs.readFileSync(resultPathPlain, 'utf8');
-
-const resultPathJSON = path.resolve(__dirname, '__fixtures__/resultJSON.txt');
-const resultJSON = fs.readFileSync(resultPathJSON, 'utf8');
-
 const testedFiles = [
-  [pathToJsonFile1, pathToJsonFile2],
-  [pathToYmlFile1, pathToYmlFile2],
-  [pathToIniFile1, pathToIniFile2],
+  ['tree', 'before.json', 'after.json', 'result.txt'],
+  ['tree', 'before.yml', 'after.yml', 'result.txt'],
+  ['tree', 'before.ini', 'after.ini', 'result.txt'],
+  ['tree', 'before-tree.json', 'after-tree.json', 'result-tree.txt'],
+  ['plain', 'before-tree.json', 'after-tree.json', 'resultPlain.txt'],
+  ['json', 'before-tree.json', 'after-tree.json', 'resultJSON.txt'],
 ];
 
 test.each(testedFiles)(
-  'genDiff-%#',
-  (beforePath, afterPath) => {
-    expect(genDiff(beforePath, afterPath, 'tree')).toEqual(result);
-  },
-);
+  'genDiff - format: %s -> %s',
+  (format, beforePath, afterPath, resultPath) => {
+    const pathToFileBefore = path.resolve(__dirname, `__fixtures__/${beforePath}`);
+    const pathToFileAfter = path.resolve(__dirname, `__fixtures__/${afterPath}`);
+    const pathToFileResult = path.resolve(__dirname, `__fixtures__/${resultPath}`);
+    const result = fs.readFileSync(pathToFileResult, 'utf8').trim();
 
-test.each([[pathToTreeFile1, pathToTreeFile2]])(
-  'genDiff-tree',
-  (beforePath, afterPath) => {
-    expect(genDiff(beforePath, afterPath, 'tree')).toEqual(resultTree);
-  },
-);
-
-test.each([[pathToTreeFile1, pathToTreeFile2]])(
-  'genDiff-plain',
-  (beforePath, afterPath) => {
-    expect(genDiff(beforePath, afterPath, 'plain')).toEqual(resultPlain);
-  },
-);
-
-test.each([[pathToTreeFile1, pathToTreeFile2]])(
-  'genDiff-JSON',
-  (beforePath, afterPath) => {
-    expect(genDiff(beforePath, afterPath, 'json')).toEqual(resultJSON);
+    expect(genDiff(pathToFileBefore, pathToFileAfter, format)).toEqual(result);
   },
 );
