@@ -23,7 +23,7 @@ const plain = (ast) => {
       case 'same':
         return null;
       default:
-        throw new Error('unknown node type.');
+        throw new Error(`${type} is unknown node type.`);
     }
   });
   return _.flattenDeep(getDiff(ast)).join('\n');

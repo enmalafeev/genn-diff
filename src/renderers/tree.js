@@ -25,7 +25,7 @@ const tree = (ast) => {
       case 'same':
         return `${spaces}${node.key}: ${resultValue}`;
       default:
-        throw new Error('unknown node type.');
+        throw new Error(`${node.type} is unknown node type.`);
     }
   });
   return `{\n${(_.flattenDeep(getDiff(ast))).join('\n')}\n}`;
