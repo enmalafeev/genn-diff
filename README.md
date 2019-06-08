@@ -1,7 +1,7 @@
 # Genn-diff
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/ca66f1e815523163275b/maintainability)](https://codeclimate.com/github/enmalafeev/project-lvl2-s463/maintainability)
-[![Build Status](https://travis-ci.com/enmalafeev/project-lvl2-s463.svg?branch=master)](https://travis-ci.com/enmalafeev/project-lvl2-s463)
+[![Build Status](https://travis-ci.com/enmalafeev/genn-diff.svg?branch=master)](https://travis-ci.com/enmalafeev/genn-diff)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ca66f1e815523163275b/test_coverage)](https://codeclimate.com/github/enmalafeev/project-lvl2-s463/test_coverage)
 
 Utility for searching diff in config files
